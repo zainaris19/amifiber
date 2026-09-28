@@ -70,24 +70,24 @@ export default function HeroVideo() {
         )}
       </motion.div>
 
-      <div className="absolute inset-0 bg-gradient-to-r from-[#002B55]/85 via-[#002B55]/45 to-[#002B55]/20" aria-hidden="true" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#002B55]/60 via-transparent to-[#002B55]/75" aria-hidden="true" />
-
       <motion.div
-        style={reduce ? undefined : { y: contentY }}
+        style={{
+          textShadow: "0 1px 3px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.45)",
+          ...(reduce ? {} : { y: contentY }),
+        }}
         className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-20 sm:px-6 lg:px-8"
       >
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#9CC9EC] sm:text-xs"
+          className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#B4D7F1] sm:text-xs"
         >
           <span className="h-px w-10 bg-brand-sky" aria-hidden="true" />
           Fiber Infrastructure • Southeast Asia
         </motion.p>
 
-        <h1 className="mt-6 font-display text-[clamp(2.625rem,7vw,5rem)] font-extrabold leading-[1.05] tracking-tight text-white">
+        <h1 className="mt-6 font-display text-[clamp(2.5rem,6vw,4.25rem)] font-extrabold leading-[1.05] tracking-tight text-white">
           {LINES.map((line, i) => (
             <span key={i} className="block overflow-hidden pb-1">
               <motion.span
@@ -106,7 +106,7 @@ export default function HeroVideo() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-7 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg"
+          className="mt-7 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg"
         >
           High-capacity fiber infrastructure connecting data centers, carriers, cloud platforms, ISPs, and enterprises
           across Southeast Asia.
@@ -138,7 +138,7 @@ export default function HeroVideo() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-          className="mt-12 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.22em] text-white/60 sm:text-xs"
+          className="mt-12 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.22em] text-white/75 sm:text-xs"
         >
           <span className="h-px w-6 bg-white/40" aria-hidden="true" />
           Built for mission-critical digital infrastructure.

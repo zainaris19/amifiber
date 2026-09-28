@@ -72,6 +72,12 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Homepage "Connecting Southeast Asia's digital infrastructure." preview now displays the customer-provided official network map ("Southeast Asia Next-Gen Network" — gray cartography, orange fiber routes, glowing blue nodes) instead of the stylized SVG; legend updated to FIBER ROUTE / NETWORK LOCATION to match the image; NetworkMapSvg.jsx removed.
 - Verified via homepage screenshot: map renders crisply in the preview card, no overflow, no console errors.
 
+## Implemented (2026-09-28) — Hero overlay removal + headline sizing (v6)
+- Removed BOTH full-bleed blue gradient overlays (L→R 85% and T→B 60–75%) from the hero — video/poster now shows neutrally, no more heavy blue cast.
+- Headline "Providing the Backbone of Digital Connectivity." reduced ~15%: clamp(2.625rem,7vw,5rem) → clamp(2.5rem,6vw,4.25rem) (max 80px → 68px).
+- Text readability kept WITHOUT overlays via inherited neutral text-shadow (0 1px 3px rgba(0,0,0,.5) + 0 10px 30px rgba(0,0,0,.45)) on the content block; eyebrow brightened #9CC9EC→#B4D7F1, paragraph white/80→white/90, bottom tagline white/60→white/75.
+- Verified via desktop 1440 + mobile 390 screenshots: no blue cast, headline clearly readable, all hero copy legible, no horizontal overflow, no console errors.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
