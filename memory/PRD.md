@@ -50,6 +50,13 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Homepage schematic map: KL–Bangkok corridor updated planned → live to match the official map.
 - Verified: hero + main maps render the real topology, country diagrams update automatically from the same data, no overflow, no console errors.
 
+## Implemented (2026-09-28) — Footprint map redesign (v2)
+- Main regional map stripped of ALL route lines, pulses, markers and connectivity animations — now a clean interactive country footprint map (accurate MapLibre vector polygons, ocean #F5F8FA, non-market land #F0F3F5, markets #E6EBEF, hover #D5E9F8, selected #0067C5, borders #CBD5DD).
+- Country selector: minimal text tabs with blue 2px underline (ALL NETWORKS / THAILAND / MALAYSIA / SINGAPORE / INDONESIA), horizontally scrollable on mobile; click country polygon directly to select; smooth fitBounds fly-to per market (SG auto-zooms close).
+- New data structure src/data/networkCountries.js (code/name/flag/status/color/bounds per market) — adding Vietnam/Cambodia/Philippines later needs one new entry; src/data/networkGeo.js and route-diagram components removed with the route-line concept.
+- New page structure: hero (short copy) → NETWORK FOOTPRINT (selector + sticky map 60% + dynamic country panel 40% with AnimatePresence fade, incl. metrics count-up, highlights, hubs, planned expansion; ALL state = regional overview with clickable country list) → detailed network information by market (crawlable HTML: routes, services, highlights, hubs, planned) → documentary photo strip → regional ecosystem summary → final CTA.
+- Verified: ALL/Indonesia/Singapore states via screenshots (correct fills, zooms, panel swaps), demotiles feature properties probed (NAME key confirmed), no console errors.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
