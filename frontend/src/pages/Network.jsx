@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, animate, motion, useInView } from "framer-motion";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import Seo from "@/components/Seo";
+import PageHero from "@/components/PageHero";
 import EcosystemNetwork from "@/components/EcosystemNetwork";
 import CTABand from "@/components/CTABand";
 import { Reveal, SectionLabel } from "@/components/Reveal";
@@ -166,24 +167,14 @@ export default function Network() {
       />
 
       {/* Hero */}
-      <section className="bg-brand-mist2 pt-28 md:pt-32 lg:pt-36" data-testid="network-hero">
-        <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-          <Reveal>
-            <SectionLabel>Our Network</SectionLabel>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h1 className="mt-6 max-w-3xl font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-brand-ink sm:text-5xl lg:text-6xl">
-              Infrastructure connecting Southeast Asia.
-            </h1>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-7 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
-              AMIFIBER operates fiber infrastructure across strategic Southeast Asian markets, connecting critical
-              digital infrastructure ecosystems.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        image="/images/network/fiber-hero.jpg"
+        imageAlt="Fiber optic connections powering AMIFIBER's regional network"
+        eyebrow="Our Network"
+        title="Infrastructure connecting Southeast Asia."
+        description="AMIFIBER operates fiber infrastructure across strategic Southeast Asian markets, connecting critical digital infrastructure ecosystems."
+        crumbs={CRUMBS}
+      />
 
       {/* Network footprint — selector + GIS map + dynamic country panel */}
       <section id="network-map" className="scroll-mt-20 border-t border-brand-line bg-white py-16 lg:py-24" data-testid="network-footprint">

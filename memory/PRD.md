@@ -84,6 +84,11 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - index.html: icon links → favicon.png + apple-touch-icon.png; JSON-LD Organization.logo → real wordmark PNG. Frontend supervisor-restarted (public/index.html is not hot-reloaded).
 - Verified: favicon.png/apple-touch-icon.png serve 200 through preview URL, served HTML carries new links, navbar logo visibly larger + crisp on desktop 1440 & mobile 390 screenshots.
 
+## Implemented (2026-09-28) — /network hero image (v8)
+- Plain light-gray hero band replaced with the shared PageHero component (same pattern as services pages): full-bleed photo + navy gradient overlay + breadcrumb + eyebrow/H1/description in white.
+- New photo /images/network/fiber-hero.jpg — blue LC fiber optic patch cables on panel (Pexels, free license, 2400x1600), chosen for brand-blue palette + "deep fiber photographic realism"; rejected candidates: control-room.jpg (actually a concert control room, pink/wrong theme), infrastructure-band.jpg (orange broadcast rack + already used on 2 pages), jakarta-night.jpg (warm amber tones), unsplash candidates (404 / premium-locked), abstract network mesh (cyberpunk-neon, forbidden by design guidelines).
+- Verified: desktop 1440 + mobile 390 screenshots (hero renders with image, text legible, breadcrumb present, footprint map + tabs below intact, no horizontal overflow); first mobile capture clipping was a mid-Lenis-scroll artifact, recheck at scrollY=0 clean.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
