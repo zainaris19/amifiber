@@ -9,37 +9,56 @@ export const COMPANY = {
 };
 
 export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Network", href: "#network" },
-  { label: "Services", href: "#services" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Industries", href: "#industries" },
-  { label: "About", href: "#about" },
+  { label: "Home", to: "/" },
+  { label: "Network", to: "/#network" },
+  { label: "Services", to: "/services" }, // rendered as dropdown trigger on desktop
+  { label: "Solutions", to: "/#solutions" },
+  { label: "Industries", to: "/#industries" },
+  { label: "About", to: "/#about" },
+];
+
+export const SERVICES_NAV = [
+  {
+    id: "dark-fiber",
+    number: "01",
+    name: "Dark Fiber",
+    description: "Dedicated fiber infrastructure with full control and scalability.",
+    path: "/services/dark-fiber",
+    icon: "cable",
+  },
+  {
+    id: "custom-network-infrastructure",
+    number: "02",
+    name: "Custom Network Infrastructure",
+    description: "Purpose-built fiber infrastructure tailored to specific network requirements.",
+    path: "/services/custom-network-infrastructure",
+    icon: "share",
+  },
 ];
 
 export const FOOTER_COLUMNS = [
   {
     title: "Network",
     links: [
-      { label: "Network Coverage", href: "#network" },
-      { label: "Data Centers", href: "#network" },
-      { label: "Points of Presence", href: "#network" },
+      { label: "Network Coverage", to: "/#network" },
+      { label: "Data Centers", to: "/#network" },
+      { label: "Points of Presence", to: "/#network" },
     ],
   },
   {
     title: "Services",
     links: [
-      { label: "Dark Fiber", href: "#services" },
-      { label: "Data Center Interconnection", href: "#services" },
-      { label: "International Connectivity", href: "#solutions" },
-      { label: "Custom Infrastructure", href: "#services" },
+      { label: "Dark Fiber", to: "/services/dark-fiber" },
+      { label: "Data Center Interconnection", to: "/#services" },
+      { label: "International Connectivity", to: "/#solutions" },
+      { label: "Custom Infrastructure", to: "/services/custom-network-infrastructure" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About", href: "#about" },
-      { label: "Contact", href: "#contact" },
+      { label: "About", to: "/#about" },
+      { label: "Contact", to: "/#contact" },
     ],
   },
   {
@@ -47,7 +66,7 @@ export const FOOTER_COLUMNS = [
     links: [
       { label: "LinkedIn", href: COMPANY.linkedin, external: true },
       { label: "Email", href: `mailto:${COMPANY.email}` },
-      { label: "Contact", href: "#contact" },
+      { label: "Contact", to: "/#contact" },
     ],
   },
 ];

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import { COMPANY, FOOTER_COLUMNS } from "@/data/company";
 
@@ -19,14 +20,24 @@ export default function Footer() {
                 <ul className="mt-5 space-y-3">
                   {col.links.map((l) => (
                     <li key={l.label}>
-                      <a
-                        href={l.href}
-                        data-testid={`footer-link-${l.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                        {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                        className="text-sm text-white/70 transition-colors hover:text-white"
-                      >
-                        {l.label}
-                      </a>
+                      {l.to ? (
+                        <Link
+                          to={l.to}
+                          data-testid={`footer-link-${l.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                          className="text-sm text-white/70 transition-colors hover:text-white"
+                        >
+                          {l.label}
+                        </Link>
+                      ) : (
+                        <a
+                          href={l.href}
+                          data-testid={`footer-link-${l.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                          {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                          className="text-sm text-white/70 transition-colors hover:text-white"
+                        >
+                          {l.label}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -38,12 +49,12 @@ export default function Footer() {
         <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-white/50">{COMPANY.copyright}</p>
           <div className="flex gap-6">
-            <a href="#home" data-testid="footer-privacy-link" className="text-sm text-white/50 transition-colors hover:text-white">
+            <Link to="/" data-testid="footer-privacy-link" className="text-sm text-white/50 transition-colors hover:text-white">
               Privacy Policy
-            </a>
-            <a href="#home" data-testid="footer-terms-link" className="text-sm text-white/50 transition-colors hover:text-white">
+            </Link>
+            <Link to="/" data-testid="footer-terms-link" className="text-sm text-white/50 transition-colors hover:text-white">
               Terms of Use
-            </a>
+            </Link>
           </div>
         </div>
       </div>

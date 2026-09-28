@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Reveal, SectionLabel } from "./Reveal";
 import { SERVICES } from "@/data/content";
@@ -45,14 +46,14 @@ export default function Services() {
                       </ul>
                     </div>
                   )}
-                  <a
-                    href="#contact"
+                  <Link
+                    to={s.href}
                     data-testid={`service-cta-${s.id}`}
                     className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue transition-colors hover:text-brand-deep"
                   >
                     {s.cta}
                     <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
-                  </a>
+                  </Link>
                 </div>
                 <div className={`lg:col-span-7 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
                   <div className="group overflow-hidden">

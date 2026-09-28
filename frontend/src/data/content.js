@@ -15,7 +15,8 @@ export const SERVICES = [
     description:
       "Dedicated physical fiber infrastructure giving customers control over capacity, equipment and network architecture.",
     idealFor: ["Data Centers", "Carriers", "Cloud Providers", "Large Enterprises"],
-    cta: "Explore Dark Fiber",
+    cta: "Learn More",
+    href: "/services/dark-fiber",
     image: "/images/service-dark-fiber.jpg",
     imageAlt: "Illuminated fiber optic cable bundle",
   },
@@ -25,7 +26,8 @@ export const SERVICES = [
     title: "Custom Network Infrastructure",
     description:
       "Purpose-built fiber infrastructure engineered around specific network topology, capacity, route diversity and redundancy requirements.",
-    cta: "Build Your Network",
+    cta: "Learn More",
+    href: "/services/custom-network-infrastructure",
     image: "/images/service-custom-network.jpg",
     imageAlt: "High-density fiber optic patch panel with organized routing",
   },
@@ -35,7 +37,8 @@ export const SERVICES = [
     title: "Data Center Interconnection",
     description:
       "High-capacity fiber infrastructure connecting strategic data centers and digital infrastructure hubs.",
-    cta: "Explore DCI",
+    cta: "Learn More",
+    href: "/services",
     image: "/images/service-dci.jpg",
     imageAlt: "Data center corridor with network equipment racks",
   },

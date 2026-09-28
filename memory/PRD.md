@@ -25,6 +25,17 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - POST /api/contact: validation, honeypot, per-IP rate limit (5/15 min), Mongo storage, managed-Resend email (verified email_sent:true to test inbox), elegant success/error+retry states. Exact required success message shown.
 - Verified: curl protocol (health/valid/honeypot/invalid/rate-limit), desktop 1440 + mobile 390 screenshot passes, form e2e through preview URL, no horizontal overflow, console warnings fixed.
 
+## Implemented (2026-09-28) — Services architecture update
+- React Router added (react-router-dom 7, already in template) with routes /, /services, /services/dark-fiber, /services/custom-network-infrastructure; ScrollManager (Lenis-aware) handles hash anchors + scroll restoration.
+- Navbar: desktop Services dropdown (hover + click, fade/6px motion, numbered items with line icons, descriptions, arrow hover, "View All Services →"); mobile Services accordion; closes on route change.
+- Homepage Services section now a preview: CTAs changed to "Learn More →" pointing at detail pages; section untouched otherwise.
+- /services: hero (breadcrumb, eyebrow, H1, description) + WHAT WE PROVIDE intro + two editorial service blocks + blue CTA band.
+- /services/dark-fiber: hero + Overview + Why Dark Fiber (4 numbered benefits, line icons) + How It Works flow diagram (5 stages, AMIFIBER Dark Fiber highlighted, traveling pulse) + Ideal For (5 photo cards) + Resilience (primary/diverse route diagram with pulses + availability disclaimer) + CTA band + Next Service block.
+- /services/custom-network-infrastructure: hero + Purpose-Built + Capabilities (5) + engagement Process (5 steps, animated line) + Use Cases (6) + Topology visualization (POPs, primary/diverse routes, cloud/carrier/intl/enterprise connections, pulses) + CTA band + Explore Service block.
+- SEO per page: unique title/description/canonical/OG via Seo component + BreadcrumbList JSON-LD; sitemap.xml updated with all routes; visual breadcrumbs on all page heroes.
+- New photography downloaded to /images/services/ (cable reels, street trench, technician, Jakarta aerial/night).
+- Verified: dropdown navigation click-through to detail pages, per-page document titles, mobile accordion, no horizontal overflow on new pages, diagrams rendering with animated pulses.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
