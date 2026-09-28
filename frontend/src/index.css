@@ -104,6 +104,33 @@
   letter-spacing: 0.08em;
   font-size: 10.5px;
 }
+
+/* Country markers on the regional infrastructure mini map */
+.map-country-marker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mcm-dot {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 9999px;
+  background: #0067c5;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 43, 85, 0.35);
+}
+.mcm-label {
+  font-family: Manrope, sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #0a1f33;
+  text-shadow:
+    0 0 3px #ffffff,
+    0 0 6px #ffffff,
+    0 1px 2px #ffffff;
+}
 .map-node-outer {
   r: 5.5;
 }

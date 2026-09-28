@@ -8,6 +8,8 @@ export const COUNTRIES = [
     code: "TH",
     name: "Thailand",
     flag: "🇹🇭",
+    cardPhoto: "/images/network/bangkok.jpg",
+    tagline: "Bangkok • EEC • Satun CLS",
     status: "Active Network",
     headline: "Connecting Bangkok to Thailand's eastern digital corridor.",
     description:
@@ -45,6 +47,8 @@ export const COUNTRIES = [
     code: "MY",
     name: "Malaysia",
     flag: "🇲🇾",
+    cardPhoto: "/images/network/kuala-lumpur.jpg",
+    tagline: "Kuala Lumpur • Cyberjaya • Johor",
     status: "Active Network",
     headline: "A digital corridor across Peninsular Malaysia.",
     description:
@@ -77,6 +81,8 @@ export const COUNTRIES = [
     code: "SG",
     name: "Singapore",
     flag: "🇸🇬",
+    cardPhoto: "/images/network/singapore.jpg",
+    tagline: "Data Center & Carrier Hub",
     status: "Active Network",
     headline: "Metro fiber built around Singapore's digital core.",
     description:
@@ -102,6 +108,8 @@ export const COUNTRIES = [
     code: "ID",
     name: "Indonesia",
     flag: "🇮🇩",
+    cardPhoto: "/images/network/jakarta.jpg",
+    tagline: "Jakarta • Anyer • Kalianda • Dumai",
     status: "Active Network",
     headline: "Connecting Java and Sumatra through terrestrial and subsea infrastructure.",
     description:

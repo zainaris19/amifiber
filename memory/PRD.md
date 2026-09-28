@@ -57,6 +57,12 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - New page structure: hero (short copy) → NETWORK FOOTPRINT (selector + sticky map 60% + dynamic country panel 40% with AnimatePresence fade, incl. metrics count-up, highlights, hubs, planned expansion; ALL state = regional overview with clickable country list) → detailed network information by market (crawlable HTML: routes, services, highlights, hubs, planned) → documentary photo strip → regional ecosystem summary → final CTA.
 - Verified: ALL/Indonesia/Singapore states via screenshots (correct fills, zooms, panel swaps), demotiles feature properties probed (NAME key confirmed), no console errors.
 
+## Implemented (2026-09-28) — Regional infrastructure section redesign (v3)
+- Section "REGIONAL INFRASTRUCTURE / Infrastructure designed to connect digital ecosystems" rebuilt to match the customer's mockup: two-tone headline (ink + blue), left column of 4 country cards (city photo, code, tagline), center non-interactive MapLibre mini map (markets #B9D6F4, context land #EAE8E4, ocean #FBFDFE, blue dot markers + uppercase country labels), right column of 6 ecosystem cards (photo + lucide line icon + title + description: Data Centers, Carriers, Cloud, International Gateways, Content Networks, Enterprises).
+- Thin blue cubic-bezier connector lines drawn between country card dots → map dots → ecosystem card dots, computed from live DOM positions (ResizeObserver-style recompute on resize + minimap-ready event); desktop-only, stacked layout below lg.
+- Country card photos (Bangkok/KL/Singapore/Jakarta) + ecosystem photos downloaded to /images/network/; taglines stored in networkPage.js (derived from actual hub names).
+- Old EcosystemDiagram.jsx removed. Verified via screenshots (desktop full composition, no broken images, no console errors).
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, animate, motion, useInView } from "framer-motion";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import Seo from "@/components/Seo";
-import EcosystemDiagram from "@/components/EcosystemDiagram";
+import EcosystemNetwork from "@/components/EcosystemNetwork";
 import CTABand from "@/components/CTABand";
 import { Reveal, SectionLabel } from "@/components/Reveal";
 import { COUNTRIES } from "@/data/networkPage";
@@ -377,25 +377,7 @@ export default function Network() {
       </section>
 
       {/* Regional summary */}
-      <section className="border-t border-brand-line bg-brand-mist py-24 lg:py-32" data-testid="network-summary">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <SectionLabel>Regional Infrastructure</SectionLabel>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="mt-6 max-w-3xl font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-brand-ink sm:text-5xl">
-              Infrastructure designed
-              <br />
-              to connect digital ecosystems.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <div className="mt-14 border border-brand-line bg-white p-4 sm:p-8 lg:p-12">
-              <EcosystemDiagram />
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <EcosystemNetwork />
 
       {/* Final CTA */}
       <section className="relative overflow-hidden bg-brand-deep py-24 lg:py-28" data-testid="network-final-cta">
