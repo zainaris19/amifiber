@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Reveal, SectionLabel } from "./Reveal";
-import NetworkMapSvg from "./NetworkMapSvg";
 
 // Homepage — short network preview. Full footprint lives on /network.
+// Map visual: AMIFIBER's official regional network map (customer-provided).
 export default function NetworkMap() {
   return (
     <section id="network" className="scroll-mt-20 bg-brand-map py-24 lg:py-32">
@@ -29,21 +29,24 @@ export default function NetworkMap() {
 
         <Reveal delay={0.15}>
           <div className="mt-14 border border-brand-line bg-white p-2 sm:p-6 lg:p-10">
-            <NetworkMapSvg />
+            <img
+              src="/images/network/amifiber-network-map.png"
+              alt="AMIFIBER regional fiber network map across Southeast Asia — Mae Chan, Hanoi, Da Nang, Bangkok, Chonburi, Ho Chi Minh, Kuala Lumpur, Singapore, Batam, Sumatera, Lampung and Jakarta"
+              loading="lazy"
+              width="1536"
+              height="1024"
+              data-testid="network-preview-map"
+              className="h-auto w-full"
+            />
+
             <div className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-4 border-t border-brand-line pt-6">
-              <div data-testid="network-legend-live" className="flex items-center gap-3">
-                <span className="h-0.5 w-8 bg-brand-net" aria-hidden="true" />
-                <span className="text-xs font-semibold uppercase tracking-widest text-brand-slate">Live Network</span>
+              <div data-testid="network-legend-route" className="flex items-center gap-3">
+                <span className="h-0.5 w-8 bg-[#F09A38]" aria-hidden="true" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-brand-slate">Fiber Route</span>
               </div>
-              <div data-testid="network-legend-planned" className="flex items-center gap-3">
-                <span className="h-0 w-8 border-t-2 border-dashed border-[#8FB3CF]" aria-hidden="true" />
-                <span className="text-xs font-semibold uppercase tracking-widest text-brand-slate">Planned Network</span>
-              </div>
-              <div data-testid="network-legend-pop" className="flex items-center gap-3">
-                <span className="flex h-3 w-3 items-center justify-center rounded-full border-2 border-brand-blue" aria-hidden="true">
-                  <span className="h-1 w-1 rounded-full bg-brand-net" />
-                </span>
-                <span className="text-xs font-semibold uppercase tracking-widest text-brand-slate">Data Center / POP</span>
+              <div data-testid="network-legend-node" className="flex items-center gap-3">
+                <span className="h-3 w-3 rounded-full bg-[#2F9BFF] shadow-[0_0_0_3px_rgba(47,155,255,0.25)]" aria-hidden="true" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-brand-slate">Network Location</span>
               </div>
             </div>
           </div>

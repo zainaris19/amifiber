@@ -68,6 +68,10 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Detailed network information section restructured into full-bleed alternating background bands (#F4F8FC / white) — each country's detail block is now visually distinct while reading, with hairline separators.
 - Fixed a JSX closing-tag compile error introduced during restructure; verified: no broken images, no console errors, bands render alternately (TH tinted, MY white, etc.).
 
+## Implemented (2026-09-28) — Homepage network preview uses official map (v5)
+- Homepage "Connecting Southeast Asia's digital infrastructure." preview now displays the customer-provided official network map ("Southeast Asia Next-Gen Network" — gray cartography, orange fiber routes, glowing blue nodes) instead of the stylized SVG; legend updated to FIBER ROUTE / NETWORK LOCATION to match the image; NetworkMapSvg.jsx removed.
+- Verified via homepage screenshot: map renders crisply in the preview card, no overflow, no console errors.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
