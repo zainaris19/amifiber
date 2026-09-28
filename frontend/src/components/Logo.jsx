@@ -23,9 +23,9 @@ export default function Logo({ variant = "dark", className = "" }) {
     <img
       src={src}
       alt="AMIFIBER"
-      width="240"
-      height="80"
-      className={`h-7 w-auto md:h-8 ${className}`}
+      width="1885"
+      height="522"
+      className={`h-8 w-auto md:h-9 ${className}`}
       data-testid={`brand-logo-${variant}`}
     />
   );

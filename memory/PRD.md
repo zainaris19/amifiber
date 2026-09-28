@@ -78,6 +78,12 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Text readability kept WITHOUT overlays via inherited neutral text-shadow (0 1px 3px rgba(0,0,0,.5) + 0 10px 30px rgba(0,0,0,.45)) on the content block; eyebrow brightened #9CC9EC→#B4D7F1, paragraph white/80→white/90, bottom tagline white/60→white/75.
 - Hero readability final state (after user feedback "too bright"): ONE subtle left-weighted overlay bg-gradient-to-r from-[#002B55]/55 via-[#002B55]/30 to-[#002B55]/10 (vs original 85%+60% double overlay) — video stays visible, text fully legible on desktop 1440 + mobile 390; mobile eyebrow clipping in first capture was a screenshot artifact, recheck capture clean.
 
+## Implemented (2026-09-28) — Bigger navbar logo + real-logo favicon (v7)
+- Cropped transparent padding from amifiber-logo.png / amifiber-logo-light.png (2000x667 → 1885x522, content-filling) so the logo renders visibly ~20% larger at the same CSS height; navbar logo height bumped h-7/md:h-8 → h-8/md:h-9 (visible size +~30% total); applies to navbar (light+dark variants) and footer.
+- Favicon rebuilt from the REAL logo asset: blue mark extracted by color separation (bright-blue mask B>130 & R<150 — strips navy text in dark variant and white text in light variant; verified no "A" sliver artifacts) → favicon.png (48x48, navy #002B55 rounded tile) + apple-touch-icon.png (180x180 full-bleed); recreated favicon.svg deleted.
+- index.html: icon links → favicon.png + apple-touch-icon.png; JSON-LD Organization.logo → real wordmark PNG. Frontend supervisor-restarted (public/index.html is not hot-reloaded).
+- Verified: favicon.png/apple-touch-icon.png serve 200 through preview URL, served HTML carries new links, navbar logo visibly larger + crisp on desktop 1440 & mobile 390 screenshots.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
