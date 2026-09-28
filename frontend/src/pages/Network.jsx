@@ -251,8 +251,8 @@ export default function Network() {
       </section>
 
       {/* Full detailed network information (crawlable) */}
-      <section id="network-details" className="scroll-mt-20 border-t border-brand-line bg-brand-mist2 py-20 lg:py-28" data-testid="network-details">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section id="network-details" className="scroll-mt-20 bg-white" data-testid="network-details">
+        <div className="mx-auto max-w-7xl px-4 pb-4 pt-20 sm:px-6 lg:px-8 lg:pb-6 lg:pt-24">
           <Reveal>
             <SectionLabel>Regional Network Coverage</SectionLabel>
           </Reveal>
@@ -263,10 +263,16 @@ export default function Network() {
               information by market.
             </h2>
           </Reveal>
+        </div>
 
-          <div className="mt-14">
-            {COUNTRIES.map((c) => (
-              <div key={c.id} id={`country-${c.code.toLowerCase()}`} className="scroll-mt-24 border-t border-brand-line py-12" data-testid={`country-section-${c.id}`}>
+        {COUNTRIES.map((c, i) => (
+          <div
+            key={c.id}
+            id={`country-${c.code.toLowerCase()}`}
+            className={`scroll-mt-24 border-t border-brand-line ${i % 2 === 0 ? "bg-[#F4F8FC]" : "bg-white"}`}
+            data-testid={`country-section-${c.id}`}
+          >
+            <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
                 <p className="flex flex-wrap items-center gap-3">
                   <span className="text-xl" aria-hidden="true">{c.flag}</span>
                   <span className="font-display text-2xl font-extrabold tracking-tight text-brand-ink">{c.name}</span>
@@ -346,9 +352,8 @@ export default function Network() {
                   </div>
                 </div>
               </div>
-            ))}
           </div>
-        </div>
+        ))}
       </section>
 
       {/* Documentary photography */}

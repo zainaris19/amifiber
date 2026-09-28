@@ -63,6 +63,11 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Country card photos (Bangkok/KL/Singapore/Jakarta) + ecosystem photos downloaded to /images/network/; taglines stored in networkPage.js (derived from actual hub names).
 - Old EcosystemDiagram.jsx removed. Verified via screenshots (desktop full composition, no broken images, no console errors).
 
+## Implemented (2026-09-28) — Ecosystem photos + country detail contrast (v4)
+- Ecosystem card photos updated to match the customer's second mockup: blue-lit DC corridor, antenna tower (real stock), glowing cloud hologram + dark server close-up (generated to mockup style), harbor gateway; enterprises keeps the night skyline.
+- Detailed network information section restructured into full-bleed alternating background bands (#F4F8FC / white) — each country's detail block is now visually distinct while reading, with hairline separators.
+- Fixed a JSX closing-tag compile error introduced during restructure; verified: no broken images, no console errors, bands render alternately (TH tinted, MY white, etc.).
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.

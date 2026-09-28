@@ -6,11 +6,11 @@ import { COUNTRIES } from "@/data/networkPage";
 const NetworkMiniMap = lazy(() => import("./NetworkMiniMap"));
 
 const ECOSYSTEMS = [
-  { id: "data-centers", icon: Server, title: "Data Centers", description: "Interconnecting regional data center ecosystems", photo: "/images/service-dci.jpg" },
-  { id: "carriers", icon: RadioTower, title: "Carriers", description: "Supporting carrier and wholesale networks", photo: "/images/network/carriers-antenna.jpg" },
-  { id: "cloud", icon: Cloud, title: "Cloud", description: "Enabling cloud connectivity and on-ramps", photo: "/images/infrastructure-band.jpg" },
-  { id: "gateways", icon: Share2, title: "International Gateways", description: "Access to global connectivity and submarine cable ecosystems", photo: "/images/network/indonesia-coastline.jpg" },
-  { id: "content", icon: PlayCircle, title: "Content Networks", description: "Supporting CDN and digital content platforms", photo: "/images/network/control-room.jpg" },
+  { id: "data-centers", icon: Server, title: "Data Centers", description: "Interconnecting regional data center ecosystems", photo: "/images/network/eco-data-centers.jpg" },
+  { id: "carriers", icon: RadioTower, title: "Carriers", description: "Supporting carrier and wholesale networks", photo: "/images/network/carriers-tower.jpg" },
+  { id: "cloud", icon: Cloud, title: "Cloud", description: "Enabling cloud connectivity and on-ramps", photo: "/images/network/eco-cloud.jpg" },
+  { id: "gateways", icon: Share2, title: "International Gateways", description: "Access to global connectivity and submarine cable ecosystems", photo: "/images/network/gateway-harbor.jpg" },
+  { id: "content", icon: PlayCircle, title: "Content Networks", description: "Supporting CDN and digital content platforms", photo: "/images/network/eco-content.jpg" },
   { id: "enterprises", icon: Building2, title: "Enterprises", description: "Private and dedicated connectivity for critical operations", photo: "/images/services/jakarta-night.jpg" },
 ];
 
