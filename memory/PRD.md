@@ -36,12 +36,22 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - New photography downloaded to /images/services/ (cable reels, street trench, technician, Jakarta aerial/night).
 - Verified: dropdown navigation click-through to detail pages, per-page document titles, mobile accordion, no horizontal overflow on new pages, diagrams rendering with animated pulses.
 
+## Implemented (2026-09-28) — Dedicated /network page
+- Architecture change: nav "Network" + footer + homepage preview CTA now route to /network; homepage keeps a short network preview (eyebrow OUR NETWORK, simplified map, CTA → /network).
+- /network: editorial hero (light bg, copy + static SVG map), interactive MapLibre GL map (maplibre-gl@2.4.0 — v6 incompatible with CRA webpack 4 worker; lazy-loaded chunk), demotiles vector basemap restyled to brand cartography (ocean #F6FAFD, land #E9EEF2, borders #CDD8E0), GeoJSON layers: active (#0067C5 + animated dash flow), planned (#67A9E8 dashed), submarine (#009FE3), hub/DC/PoP/CLS markers; country filter pills (ALL/TH/MY/SG/ID → fitBounds + layer filter + polygon highlight), layer visibility toggles, hover tooltips (route: name/status/type; node: location/infrastructure/status), country click-to-select, zoom/pan controls.
+- Regional footprint intro with TH/MY/SG/ID selector chips; four country editorial sections (alternating layouts; Singapore = photo; Indonesia = full-width route map) with all route data as crawlable HTML (routes, services chips, highlights, count-up metrics 500+/800+/300+/2,500+ KM, hubs, planned expansion); documentary photo bands between sections; regional summary ecosystem diagram (4 markets → backbone bus → 6 ecosystem targets); deep-blue final CTA.
+- Data files: src/data/networkGeo.js (coords + routes, clearly editable, approximate coords documented) and src/data/networkPage.js (all copy/metrics/routes).
+- SEO: title "Southeast Asia Fiber Network | AMIFIBER" + description/canonical/OG/breadcrumb JSON-LD; sitemap.xml includes /network; network info NOT only in tooltips (full HTML duplication).
+- Verified: desktop + mobile screenshot passes, country filter interaction, no horizontal overflow, map canvas rendering, count-up metrics, no console errors.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
+- P1: Correct/verify GIS coordinates in src/data/networkGeo.js (currently approximate).
 - P1: CRM/WhatsApp/ticketing hook on POST /api/contact (modular — single integration point).
 - P2: Privacy Policy & Terms of Use pages (currently anchor placeholders).
 
 ## Next Tasks
 1. Configure CONTACT_EMAIL destination.
 2. Update LinkedIn/email links.
+3. Verify GIS coordinates against real route data.

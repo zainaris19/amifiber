@@ -10,7 +10,7 @@ export const COMPANY = {
 
 export const NAV_LINKS = [
   { label: "Home", to: "/" },
-  { label: "Network", to: "/#network" },
+  { label: "Network", to: "/network" },
   { label: "Services", to: "/services" }, // rendered as dropdown trigger on desktop
   { label: "Solutions", to: "/#solutions" },
   { label: "Industries", to: "/#industries" },
@@ -40,9 +40,9 @@ export const FOOTER_COLUMNS = [
   {
     title: "Network",
     links: [
-      { label: "Network Coverage", to: "/#network" },
-      { label: "Data Centers", to: "/#network" },
-      { label: "Points of Presence", to: "/#network" },
+      { label: "Network Coverage", to: "/network" },
+      { label: "Data Centers", to: "/network" },
+      { label: "Points of Presence", to: "/network" },
     ],
   },
   {

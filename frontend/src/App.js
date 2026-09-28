@@ -23,6 +23,7 @@ import Contact from "@/components/Contact";
 import ServicesOverview from "@/pages/ServicesOverview";
 import DarkFiber from "@/pages/DarkFiber";
 import CustomInfrastructure from "@/pages/CustomInfrastructure";
+import Network from "@/pages/Network";
 
 function HomePage() {
   return (
@@ -91,6 +92,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/network" element={<Network />} />
             <Route path="/services" element={<ServicesOverview />} />
             <Route path="/services/dark-fiber" element={<DarkFiber />} />
             <Route path="/services/custom-network-infrastructure" element={<CustomInfrastructure />} />
