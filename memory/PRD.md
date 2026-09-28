@@ -97,6 +97,14 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Removed "Data Center Interconnection" and "International Connectivity" from the footer SERVICES column (FOOTER_COLUMNS in company.js) — column now lists only the two real service pages: Dark Fiber + Custom Infrastructure.
 - Verified via footer screenshot: both links gone, all other columns (Network / Company / Connect) intact.
 
+## Implemented (2026-09-28) — Contact email flow activated (v11)
+- backend/.env: CONTACT_EMAIL=sales@amifiber.com (was empty — root cause of "email not working").
+- POST /api/contact now sends TWO managed-Resend emails per submission: (1) internal notification → sales@amifiber.com with all form fields (name/company/email/phone/service/message), Reply-To = visitor's email so sales can reply directly; (2) visitor auto-reply confirmation "received, processed within 1–2 business days" with submission summary, Reply-To = sales@amifiber.com (owner-controlled config, per G4).
+- Sender shows display name "AMIFIBER" (EMAIL_FROM_NAME) over the platform-verified sending domain — the literal gmail From address the user asked for is not possible on managed Resend (gmail.com cannot be domain-verified); documented to user.
+- Frontend success state updated: "A confirmation email has been sent to your inbox — our infrastructure team will process your inquiry within 1–2 business days."
+- Playbook self-check passed: EMAIL_FROM_NAME in .env+code, from_name on every payload, _assert_safe_email gate on the single send path, no forms/links/credential asks in templates, recipients from config or the form author.
+- Verified e2e via external preview URL: POST /api/contact → {"email_sent": true, "confirmation_sent": true}; proxy logs show 2x HTTP 202 Accepted; rate-limit 429 still functioning. Could NOT verify inbox receipt inside sales@amifiber.com (no mailbox access) — user should confirm arrival.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.

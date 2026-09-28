@@ -226,6 +226,50 @@ def _inquiry_email_html(inq: ContactInquiry, submitted_at: str) -> str:
   </td></tr>
 </table>"""
 
+def _visitor_confirmation_html(inq: ContactInquiry, submitted_at: str) -> str:
+    rows = "".join(
+        f'<tr>'
+        f'<td style="padding:10px 16px;font-family:Arial,sans-serif;font-size:12px;color:#52687A;'
+        f'border-bottom:1px solid #DCE7EF;white-space:nowrap">{escape(k)}</td>'
+        f'<td style="padding:10px 16px;font-family:Arial,sans-serif;font-size:14px;color:#0A1F33;'
+        f'border-bottom:1px solid #DCE7EF">{escape(v)}</td>'
+        f"</tr>"
+        for k, v in [
+            ("Name", inq.full_name),
+            ("Company", inq.company),
+            ("Service Required", inq.service),
+            ("Submitted", f"{submitted_at} UTC"),
+        ]
+    )
+    return f"""<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F6F9FC;padding:32px 0">
+  <tr><td align="center">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background:#FFFFFF;border:1px solid #DCE7EF">
+      <tr><td style="padding:24px 32px;background:#003B73">
+        <p style="margin:0;font-family:Arial,sans-serif;font-size:18px;font-weight:bold;color:#FFFFFF">AMIFIBER</p>
+        <p style="margin:4px 0 0;font-family:Arial,sans-serif;font-size:12px;color:#9CC9EC">Your inquiry has been received</p>
+      </td></tr>
+      <tr><td style="padding:24px 32px">
+        <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;line-height:1.6;color:#0A1F33">Dear {escape(inq.full_name)},</p>
+        <p style="margin:12px 0 0;font-family:Arial,sans-serif;font-size:14px;line-height:1.6;color:#0A1F33">
+          Thank you for contacting AMIFIBER. We have received your message and our infrastructure team will
+          review and process your inquiry within <strong>1&ndash;2 business days</strong>.
+        </p>
+      </td></tr>
+      <tr><td style="padding:8px 32px 8px">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">{rows}</table>
+      </td></tr>
+      <tr><td style="padding:16px 32px 24px">
+        <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;line-height:1.6;color:#0A1F33">
+          If you would like to add any information, simply reply to this email — it will reach our sales team directly.
+        </p>
+      </td></tr>
+      <tr><td style="padding:0 32px 24px">
+        <p style="margin:0;font-family:Arial,sans-serif;font-size:12px;color:#8097AA">Sent by {escape(EMAIL_FROM_NAME)}. We never ask for your password or card details by email.</p>
+      </td></tr>
+    </table>
+  </td></tr>
+</table>"""
+
 
 @api_router.get("/")
 async def root():
@@ -261,6 +305,19 @@ async def submit_contact(inq: ContactInquiry, request: Request):
             reply_to=inq.email,
         )
 
+    # Auto-reply confirmation to the visitor. Reply-To points at the sales inbox
+    # (owner-controlled config), so replies from the visitor reach the team.
+    confirmation_id = None
+    try:
+        confirmation_id = await send_email(
+            to=inq.email,
+            subject="We've received your inquiry — AMIFIBER",
+            html=_visitor_confirmation_html(inq, submitted_at),
+            reply_to=destination or None,
+        )
+    except Exception as e:
+        logger.error(f"Visitor confirmation email failed: {e}")
+
     doc = {
         "id": str(uuid.uuid4()),
         "full_name": inq.full_name,
@@ -277,7 +334,7 @@ async def submit_contact(inq: ContactInquiry, request: Request):
     except Exception as e:
         logger.error(f"Failed to store inquiry: {e}")
 
-    return {"status": "success", "email_sent": bool(email_id)}
+    return {"status": "success", "email_sent": bool(email_id), "confirmation_sent": bool(confirmation_id)}
 
 
 app.include_router(api_router)

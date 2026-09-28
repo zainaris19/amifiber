@@ -115,7 +115,8 @@ export default function Contact() {
               </span>
               <h3 className="mt-6 font-display text-2xl font-bold text-brand-ink">Inquiry received.</h3>
               <p className="mt-3 max-w-md text-base leading-relaxed text-brand-slate">
-                Thank you for contacting AMIFIBER. Our infrastructure team will get back to you shortly.
+                Thank you for contacting AMIFIBER. A confirmation email has been sent to your inbox — our
+                infrastructure team will process your inquiry within 1&ndash;2 business days.
               </p>
               <button
                 type="button"
