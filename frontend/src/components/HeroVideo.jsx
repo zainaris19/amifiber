@@ -27,7 +27,8 @@ export default function HeroVideo() {
     const v = videoRef.current;
     if (!v || reduce) return;
     const onError = () => setVideoFailed(true);
-    v.addEventListener("error", onError, true);
+    // No capture flag: fires only when every <source> has failed (element-level error)
+    v.addEventListener("error", onError);
     return () => v.removeEventListener("error", onError, true);
   }, [reduce, isMobile]);
 
@@ -64,6 +65,7 @@ export default function HeroVideo() {
             onCanPlay={() => setVideoOk(true)}
           >
             <source src={src} type="video/mp4" />
+            <source src="/videos/amifiber-hero.webm" type="video/webm" />
           </video>
         )}
       </motion.div>

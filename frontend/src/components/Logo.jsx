@@ -14,12 +14,19 @@ export function LogoMark({ className = "h-7 w-auto" }) {
   );
 }
 
+// Real AMIFIBER brand asset (provided logo, background removed):
+//  - "dark": original navy wordmark → white/light backgrounds
+//  - "light": white wordmark → dark backgrounds (transparent navbar over video, footer)
 export default function Logo({ variant = "dark", className = "" }) {
-  const wordColor = variant === "light" ? "text-white" : "text-brand-deep";
+  const src = variant === "light" ? "/images/amifiber-logo-light.png" : "/images/amifiber-logo.png";
   return (
-    <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <LogoMark />
-      <span className={`font-display text-xl font-extrabold tracking-tight ${wordColor}`}>AMIFIBER</span>
-    </span>
+    <img
+      src={src}
+      alt="AMIFIBER"
+      width="240"
+      height="80"
+      className={`h-7 w-auto md:h-8 ${className}`}
+      data-testid={`brand-logo-${variant}`}
+    />
   );
 }

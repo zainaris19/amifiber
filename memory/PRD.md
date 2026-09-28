@@ -20,18 +20,17 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 
 ## Implemented (2026-09-28)
 - All 16 sections above, built from scratch; brand SVG logo + favicon recreated from AMIFIBER mark.
-- Hero: video-ready (auto-plays /videos/amifiber-hero.mp4 or -mobile.mp4 when present; poster fallback now).
+- Hero video: user-provided MP4 installed at /videos/amifiber-hero.mp4 (+ 720p -mobile.mp4 transcode, VP9 .webm fallback for codec-poor browsers, poster frame extracted from the actual video). Verified playing (currentTime advancing) on desktop and mobile.
+- Real AMIFIBER logo (user-provided, background removed): navy variant on light backgrounds, white-recolor variant over video/footer.
 - POST /api/contact: validation, honeypot, per-IP rate limit (5/15 min), Mongo storage, managed-Resend email (verified email_sent:true to test inbox), elegant success/error+retry states. Exact required success message shown.
 - Verified: curl protocol (health/valid/honeypot/invalid/rate-limit), desktop 1440 + mobile 390 screenshot passes, form e2e through preview URL, no horizontal overflow, console warnings fixed.
 
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
-- P0: Drop user's hero video at frontend/public/videos/amifiber-hero.mp4 (+ -mobile.mp4).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
 - P1: CRM/WhatsApp/ticketing hook on POST /api/contact (modular — single integration point).
 - P2: Privacy Policy & Terms of Use pages (currently anchor placeholders).
 
 ## Next Tasks
-1. Receive + install hero video files.
-2. Configure CONTACT_EMAIL destination.
-3. Update LinkedIn/email links.
+1. Configure CONTACT_EMAIL destination.
+2. Update LinkedIn/email links.
