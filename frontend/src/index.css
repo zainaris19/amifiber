@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 44% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 44% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 44% 12%;
+    --primary: 208 100% 36%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 45% 96%;
+    --secondary-foreground: 210 44% 12%;
+    --muted: 210 45% 96%;
+    --muted-foreground: 208 19% 40%;
+    --accent: 210 45% 96%;
+    --accent-foreground: 210 44% 12%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 206 33% 90%;
+    --input: 206 33% 90%;
+    --ring: 202 92% 51%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-brand-ink;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+::selection {
+  background: #0057b8;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #0088e8;
+  outline-offset: 2px;
+}
+
+/* Editorial marquee — one slow loop */
+@keyframes amifiber-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: amifiber-marquee 48s linear infinite;
+  will-change: transform;
+}
+
+/* Subtle fiber-line pattern for the final CTA */
+.fiber-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cg fill='none' stroke='%23FFFFFF' stroke-opacity='0.08'%3E%3Cpath d='M-20 340 Q 100 200 210 260 T 440 180'/%3E%3Cpath d='M-20 240 Q 120 90 230 170 T 440 60'/%3E%3Cpath d='M-20 440 Q 130 300 240 360 T 440 290'/%3E%3Cpath d='M-20 140 Q 140 -20 250 60 T 440 -40'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Map typography scales up on small screens to stay legible inside the SVG viewBox */
+.map-label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+.map-node-outer {
+  r: 5.5;
+}
+.map-node-inner {
+  r: 2;
+}
+.map-pulse {
+  r: 2.5;
+}
+@media (max-width: 640px) {
+  .map-label {
+    font-size: 24px;
+    letter-spacing: 0.1em;
+  }
+  .map-node-outer {
+    r: 9;
+  }
+  .map-node-inner {
+    r: 4;
+  }
+  .map-pulse {
+    r: 5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .marquee-track {
+    animation: none;
+  }
+}

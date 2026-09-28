@@ -1,0 +1,273 @@
+{
+  "brand": {
+    "name": "AMIFIBER",
+    "tagline": "Providing the Backbone of Digital Connectivity.",
+    "sub_tagline": "High-capacity fiber infrastructure connecting data centers, carriers, cloud platforms, ISPs, and enterprises across Southeast Asia.",
+    "positioning": "Southeast Asia B2B wholesale fiber infrastructure provider (Jakarta, Singapore, Malaysia, Thailand). Dedicated carrier-grade infrastructure, NOT a residential ISP.",
+    "attributes": [
+      "Carrier-Grade Infrastructure",
+      "Mission-Critical Scale",
+      "Regional Reach",
+      "99.99999% Reliability",
+      "Ultra-Low Latency"
+    ]
+  },
+  "aesthetic_archetype": {
+    "archetype_id": "ARCHETYPE_4_MODIFIED_SWISS_CORPORATE",
+    "theme_mode": "Predominantly Crisp White & Clean Corporate Blue (70% White/Light, 20% Deep Corporate Blue, 10% Network/Sky Blue)",
+    "design_personality": "Minimal, architectural, precise, reliable, ultra-clean corporate B2B telecom infrastructure. Zero neon gimmicks, zero SaaS-slop floating blobs, zero cheap gradients. Real technical network visualizations, 1px precision grid dividers, deep fiber photographic realism, and calm high-contrast typography.",
+    "forbidden_patterns": [
+      "Generic SaaS pastel gradients",
+      "Neon purple/cyan glow or cyberpunk tropes",
+      "Floating 3D blobs or cartoonish illustrations",
+      "Excessive glassmorphism or muddy blurry cards",
+      "Residential ISP tropes like speed tests or home WiFi imagery",
+      "Generic template card soup with identical box shadows",
+      "Default Inter headings"
+    ]
+  },
+  "colors": {
+    "dominant_background": "#FFFFFF",
+    "surface_subtle_1": "#F6F9FC",
+    "surface_subtle_2": "#F1F6FA",
+    "surface_subtle_3": "#EAF3F9",
+    "primary_blue": "#0057B8",
+    "network_blue": "#0088E8",
+    "light_blue": "#38BDF8",
+    "deep_corporate_blue": "#003B73",
+    "footer_deep_blue": "#002B55",
+    "primary_text": "#0A1F33",
+    "secondary_text": "#52687A",
+    "muted_text": "#8097AA",
+    "border_light": "#DCE7EF",
+    "border_dark": "#164E87",
+    "accent_pulse": "#00D2FF",
+    "ratios": {
+      "white_and_light": "70%",
+      "corporate_blue": "20%",
+      "network_and_light_blue": "10%"
+    }
+  },
+  "typography": {
+    "heading_font": "Manrope, sans-serif",
+    "body_font": "Inter, sans-serif",
+    "code_font": "JetBrains Mono, monospace",
+    "hierarchy": {
+      "hero_h1": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08]",
+      "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0A1F33]",
+      "section_eyebrow": "text-xs font-semibold tracking-[0.2em] uppercase text-[#0057B8]",
+      "subsection_h3": "text-xl sm:text-2xl font-semibold tracking-tight text-[#0A1F33]",
+      "card_h4": "text-lg sm:text-xl font-semibold text-[#0A1F33]",
+      "body_large": "text-base sm:text-lg text-[#52687A] leading-relaxed",
+      "body_regular": "text-sm sm:text-base text-[#52687A] leading-relaxed",
+      "meta_small": "text-xs text-[#8097AA] uppercase tracking-wider"
+    }
+  },
+  "layout_and_grids": {
+    "grid_philosophy": "Swiss Grid with 1px hairline borders (#DCE7EF), generous spacing (py-24 to py-32), crisp edges, and zero visual clutter.",
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "hero_layout": "Full viewport hero (min-h-screen) with subtle cinematic dark blue gradient overlay on fiber/data center visual, left-aligned architectural typography, primary and secondary CTA buttons, no floating cards, and subtle vertical line indicator.",
+    "statistics_layout": "Horizontal row with thin vertical border separators (#DCE7EF), animated count-up once, 4 metrics on desktop, 2x2 grid on mobile.",
+    "network_map_layout": "Full interactive Southeast Asian SVG network schematic on #F3F7FB. Nodes: Jakarta, Singapore, Kuala Lumpur/Malaysia, Bangkok/Thailand, Batam. Live animated pulsed fiber lines with legend: Live Network, Planned Build, Data Center, PoP.",
+    "services_layout": "Editorial alternating numbered rows (01 Dark Fiber, 02 Custom Network Infrastructure, 03 Data Center Interconnection) with high-detail technical specs and real photographic fiber infrastructure imagery.",
+    "solutions_grid": "Modular 6-card grid (grid-cols-1 md:grid-cols-2 lg:grid-cols-3) with 1px solid border (#DCE7EF), subtle hover lift, technical monochrome line icons with blue accenting.",
+    "why_amifiber_layout": "Deep corporate blue (#003B73) full section, large crisp white typography, hairline semi-transparent borders (#164E87), 6 pillar blocks with zero cards for high authoritative weight.",
+    "connectivity_diagram_layout": "Horizontal technical engineering path diagram: Data Center -> Metro Fiber Network -> AMIFIBER Regional Backbone -> Cross-Border Terrestrial/Subsea -> International Gateway -> Cloud/ISP/CDN with animated traveling data pulses.",
+    "contact_form_layout": "Crisp two-column B2B infrastructure layout on pure white: direct enterprise dispatch details and operational centers on the left; structured enterprise RFQ form on the right with Service dropdown and validation."
+  },
+  "image_urls": {
+    "hero_backdrop": {
+      "url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwyfHxkYXRhJTIwY2VudGVyJTIwc2VydmVyJTIwcmFja3N8ZW58MHx8fHwxNzkwNTc0Mjk0fDA&ixlib=rb-4.1.0&q=85",
+      "description": "High-density optical fiber cross-connect cabling in enterprise server racks for hero background",
+      "category": "hero"
+    },
+    "service_dark_fiber": {
+      "url": "https://images.unsplash.com/photo-1606814540563-5c02d62fd409?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwzfHxmaWJlciUyMG9wdGljJTIwY2FibGUlMjBnbG93aW5nfGVufDB8fHx8MTc5MDU3NDI5NHww&ixlib=rb-4.1.0&q=85",
+      "description": "Precision illuminated fiber optic core bundle for 01 Dark Fiber service spotlight",
+      "category": "services"
+    },
+    "service_custom_infrastructure": {
+      "url": "https://images.unsplash.com/photo-1594915440248-1e419eba6611?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwyfHxmaWJlciUyMG9wdGljJTIwdGVjaG5pY2lhbiUyMHNwbGljaW5nfGVufDB8fHx8MTc5MDU3NDI5OHww&ixlib=rb-4.1.0&q=85",
+      "description": "Enterprise fiber optic patch panel with high-density LC connectors and organized routing",
+      "category": "services"
+    },
+    "service_dci": {
+      "url": "https://images.unsplash.com/photo-1584169417032-d34e8d805e8b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwxfHxkYXRhJTIwY2VudGVyJTIwc2VydmVyJTIwcmFja3N8ZW58MHx8fHwxNzkwNTc0Mjk0fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Hyperscale data center corridor with metallic equipment racks for Data Center Interconnection",
+      "category": "services"
+    },
+    "cinematic_infrastructure_band": {
+      "url": "https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwzfHxkYXRhJTIwY2VudGVyJTIwc2VydmVyJTIwcmFja3N8ZW58MHx8fHwxNzkwNTc0Mjk0fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Mission-critical carrier data hall aisle with optical distribution frame",
+      "category": "experience_band"
+    },
+    "regional_vision": {
+      "url": "https://images.unsplash.com/photo-1639066648921-82d4500abf1a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHw0fHxkYXRhJTIwY2VudGVyJTIwc2VydmVyJTIwcmFja3N8ZW58MHx8fHwxNzkwNTc0Mjk0fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Large-scale electronic transmission racks representing Southeast Asian digital backbone infrastructure",
+      "category": "vision"
+    }
+  },
+  "sections_sequence": [
+    {
+      "order": 1,
+      "id": "navbar",
+      "component": "Navbar",
+      "description": "Sticky navigation transitioning from transparent with white text over hero to white bg (#FFFFFF), #0A1F33 text, #DCE7EF bottom border, and #0057B8 CTA on scroll. Includes mobile sheet menu and direct section anchors."
+    },
+    {
+      "order": 2,
+      "id": "hero",
+      "component": "HeroSection",
+      "description": "Full-viewport hero with high-density fiber cross-connect backdrop, gradient scrim (from-black/80 via-[#002B55]/60 to-transparent), eyebrow 'FIBER INFRASTRUCTURE • SOUTHEAST ASIA', H1 'Providing the Backbone of Digital Connectivity.', primary and secondary CTAs, trust line, and animated scroll indicator."
+    },
+    {
+      "order": 3,
+      "id": "intro",
+      "component": "IntroSection",
+      "description": "White editorial two-column layout: Left column 'THE INFRASTRUCTURE BEHIND CONNECTIVITY' with blue accent bar; right column 'Built to move the digital world.' with corporate narrative regarding hyperscale demand, dark fiber, and carrier interconnect."
+    },
+    {
+      "order": 4,
+      "id": "statistics",
+      "component": "StatisticsRow",
+      "description": "High-impact stats row with hairline vertical dividers: 4 Countries (ID, SG, MY, TH), 350+ KM On Service, 2,300 KM Planned Build, 50+ Data Centers Connected, 100+ Points of Presence. Single count-up trigger using Framer Motion."
+    },
+    {
+      "order": 5,
+      "id": "network",
+      "component": "NetworkFootprint",
+      "description": "Interactive regional map on #F3F7FB. Stylized SVG geography of Southeast Asia highlighting Jakarta, Singapore, Batam, Kuala Lumpur, and Bangkok. Animated SVG stroke fiber paths with travelling pulses. Interactive node tooltips and filterable legend: LIVE NETWORK, PLANNED BUILD, DATA CENTER, POP."
+    },
+    {
+      "order": 6,
+      "id": "services",
+      "component": "CoreServices",
+      "description": "Editorial alternating numbered rows (01 Dark Fiber, 02 Custom Network Infrastructure, 03 Data Center Interconnection) with real fiber photography, technical specification pills, fiber strand counts, SLA specs, and bespoke capacity options."
+    },
+    {
+      "order": 7,
+      "id": "infrastructure-experience",
+      "component": "ExperienceBand",
+      "description": "Cinematic full-width parallax visual band with dark corporate blue overlay: 'ENGINEERED FOR SCALE' / 'Infrastructure built beyond today's demand.' Explaining 100G/400G/800G coherent optics readiness and diverse subterranean routing."
+    },
+    {
+      "order": 8,
+      "id": "solutions",
+      "component": "SolutionsGrid",
+      "description": "Modular 6-card grid with 1px border (#DCE7EF) and minimal technical line icons: International Connectivity, Bandwidth on Demand, Layer 1 DWDM, Layer 2 Carrier Ethernet, Protected Low-Latency Ring, and Data Center Interconnection."
+    },
+    {
+      "order": 9,
+      "id": "why-amifiber",
+      "component": "WhyAmifiber",
+      "description": "Deep corporate blue (#003B73) section with massive typography: 'Infrastructure you can depend on.' 6 pillars with thin borders: 99.99999% Uptime SLA, Sub-5ms Regional Latency, Carrier-Neutral Interconnect, 24/7/365 NOC Monitoring, 100% Dedicated Physical Fiber, and Terrestrial + Subsea Route Diversity."
+    },
+    {
+      "order": 10,
+      "id": "who-we-serve",
+      "component": "WhoWeServe",
+      "description": "Numbered editorial rows for target B2B segments: 01 ISPs & Telecom Carriers, 02 Data Center Operators, 03 International Gateway Operators, 04 Cloud & Content Delivery Platforms, 05 Multinational Enterprises. Detailed use cases for each."
+    },
+    {
+      "order": 11,
+      "id": "connectivity-visualization",
+      "component": "ConnectivityVisualization",
+      "description": "Interactive animated engineering schematic showing packet and photonic flow: DATA CENTER -> METRO FIBER NETWORK -> AMIFIBER BACKBONE -> REGIONAL CONNECTIVITY -> INTERNATIONAL GATEWAY -> CLOUD / CONTENT / ISP. Step-by-step state inspection with latency indicators."
+    },
+    {
+      "order": 12,
+      "id": "reliability",
+      "component": "ReliabilitySection",
+      "description": "Crisp white architecture section highlighting 3 engineering principles: Route Diversity (dual physical ingress/egress), Scalable Terabit Capacity (DWDM spectrum reservation), and Real-time Optical Time Domain Reflectometer (OTDR) Network Visibility."
+    },
+    {
+      "order": 13,
+      "id": "regional-vision",
+      "component": "RegionalVision",
+      "description": "Strategic perspective on Southeast Asia's explosive digital economy, featuring key regional growth nodes across Indonesia, Singapore, Malaysia, and Thailand with high-contrast data callouts."
+    },
+    {
+      "order": 14,
+      "id": "final-cta",
+      "component": "FinalCtaBanner",
+      "description": "High-impact brand blue (#0057B8) section with subtle optical line grid: 'Let\\'s build your next connection.' Instant access to network planners and engineering feasibility teams."
+    },
+    {
+      "order": 15,
+      "id": "contact",
+      "component": "ContactSection",
+      "description": "White B2B inquiry section with complete RFQ form: Full Name*, Company*, Business Email*, Phone/WhatsApp, Service Required* (Select dropdown), Message*. Validated with toast feedback and clear regional office locations (Jakarta, Singapore)."
+    },
+    {
+      "order": 16,
+      "id": "footer",
+      "component": "Footer",
+      "description": "Deep blue (#002B55) corporate footer with 4 link columns (Network & Coverage, Infrastructure Solutions, Regulatory & Compliance, Regional Operations), brand statement, copyright, and emergency NOC hotline."
+    }
+  ],
+  "testing_attributes": {
+    "protocol": "All interactive buttons, links, inputs, and key indicators must have kebab-case data-testid attributes.",
+    "key_test_ids": [
+      "navbar-brand-logo",
+      "navbar-link-network",
+      "navbar-link-services",
+      "navbar-link-solutions",
+      "navbar-link-why",
+      "navbar-link-contact",
+      "navbar-cta-button",
+      "hero-explore-network-button",
+      "hero-contact-button",
+      "stats-counter-countries",
+      "stats-counter-km-service",
+      "stats-counter-km-planned",
+      "stats-counter-datacenters",
+      "network-map-svg",
+      "network-legend-live",
+      "network-legend-planned",
+      "network-node-jakarta",
+      "network-node-singapore",
+      "network-node-kl",
+      "network-node-bangkok",
+      "service-row-dark-fiber",
+      "service-row-custom-network",
+      "service-row-dci",
+      "solution-card-international",
+      "solution-card-dwdm",
+      "connectivity-diagram-node-dc",
+      "connectivity-diagram-node-backbone",
+      "contact-form-name-input",
+      "contact-form-company-input",
+      "contact-form-email-input",
+      "contact-form-phone-input",
+      "contact-form-service-select",
+      "contact-form-message-input",
+      "contact-form-submit-button"
+    ]
+  },
+  "micro_interactions": {
+    "framer_motion_rules": [
+      "Scroll reveal: opacity 0 -> 1, translateY 20px -> 0 with transition duration 0.6s - 0.8s and easeOut.",
+      "Stats counter: uses Framer Motion animate hook to smoothly increment numbers upon viewport entry.",
+      "Network map pulses: SVG circular pulses with subtle stroke-dashoffset / stroke-dasharray animations.",
+      "Card hover: subtle 1-2px translateY lift with crisp border color shift from #DCE7EF to #0057B8.",
+      "Image hover: max scale 1.02 over 0.5s ease.",
+      "Accessibility: honor prefers-reduced-motion using useReducedMotion() hook."
+    ]
+  },
+  "instructions_to_main_agent": [
+    "This is a JavaScript project with .js and .jsx files (not .tsx). Do not write TypeScript types in component code.",
+    "Follow the exact corporate BLUE + WHITE color identity specified. Never use purple or cyan neon gradients.",
+    "Ensure the hero has a robust dark blue gradient overlay (max opacity bg-black/60 with #002B55 gradient) so the white text has pristine APCA contrast.",
+    "Render the Southeast Asian network map using an SVG illustration with Jakarta, Singapore, Batam, Kuala Lumpur, and Bangkok accurately positioned.",
+    "Ensure all forms use controlled state and provide prompt feedback via sonner toast upon submission.",
+    "Never use generic centered layouts across the board; enforce Swiss editorial asymmetric rhythms with 1px borders and ample padding.",
+    "Attach data-testid to every interactive button, menu, input, and key statistic."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": {
+    "anti_ai_slop": "Avoid generic centered cards, AI gradients, and floating emojis. Build authoritative, engineered Swiss infrastructure aesthetic.",
+    "typography": "Use Manrope for all headings and Inter for all body text. Never default to plain Inter for headers.",
+    "spacing": "Generous spacing philosophy: use py-24 or py-32 for section breathing room.",
+    "transitions": "Specific transitions only. Never use transition: all.",
+    "contrast": "Ensure minimum 4.5:1 contrast for all copy against surfaces."
+  }
+}
