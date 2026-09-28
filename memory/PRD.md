@@ -44,6 +44,12 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - SEO: title "Southeast Asia Fiber Network | AMIFIBER" + description/canonical/OG/breadcrumb JSON-LD; sitemap.xml includes /network; network info NOT only in tooltips (full HTML duplication).
 - Verified: desktop + mobile screenshot passes, country filter interaction, no horizontal overflow, map canvas rendering, count-up metrics, no console errors.
 
+## Implemented (2026-09-28) — Real route topology (customer map)
+- networkGeo.js rebuilt around AMIFIBER's official regional map: Mae Chan, Hanoi, Da Nang, Ho Chi Minh, Bangkok, Chonburi, Rayong, Satun CLS, TH–MY Border, Chering, Kuala Lumpur, Cyberjaya, Johor Baru, Singapore (+7 DC PoPs), Batam, Sumatera, Lampung, Jakarta, Anyer CLS, Kalianda CLS, Dumai, Aceh.
+- Real backbone routes rendered on the /network hero map (new lazy-init compact GL instance) and the main interactive map, incl. the Indochina loop (Bangkok–Hanoi–Da Nang–HCMC), peninsular trunk (Border–KL–JB–SG), Batam–Sumatera subsea and the CLS corridor. Cross-border trunks scoped out of small country SVG diagrams via a `diagram` field to avoid clipping.
+- Homepage schematic map: KL–Bangkok corridor updated planned → live to match the official map.
+- Verified: hero + main maps render the real topology, country diagrams update automatically from the same data, no overflow, no console errors.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.

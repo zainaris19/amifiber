@@ -11,6 +11,7 @@ import { Reveal, SectionLabel } from "@/components/Reveal";
 import { COUNTRIES } from "@/data/networkPage";
 
 const NetworkMapGL = lazy(() => import("@/components/NetworkMapGL"));
+const NetworkHeroMap = lazy(() => import("@/components/NetworkHeroMap"));
 
 const CRUMBS = [
   { name: "Home", path: "/" },
@@ -262,8 +263,16 @@ export default function Network() {
             </Reveal>
           </div>
           <Reveal delay={0.12} className="lg:col-span-6">
-            <div className="border border-brand-line bg-white p-2 sm:p-6">
-              <NetworkMapSvg showPulses />
+            <div className="h-[380px] border border-brand-line bg-brand-map sm:h-[460px] lg:h-[560px]">
+              <Suspense
+                fallback={
+                  <div className="flex h-full items-center justify-center">
+                    <span className="h-8 w-8 animate-spin rounded-full border-2 border-brand-line border-t-brand-blue" aria-hidden="true" />
+                  </div>
+                }
+              >
+                <NetworkHeroMap />
+              </Suspense>
             </div>
           </Reveal>
         </div>

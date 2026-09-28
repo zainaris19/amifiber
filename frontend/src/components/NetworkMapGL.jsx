@@ -140,6 +140,7 @@ export default function NetworkMapGL({ selectedCountry, onCountrySelect, layerVi
       style: buildStyle("all"),
       center: [101.5, 3.5],
       zoom: 3.4,
+      scrollZoom: false,
       attribution: { compact: true },
     });
     mapRef.current = map;

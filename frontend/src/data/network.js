@@ -22,6 +22,6 @@ export const MAP_LOCATIONS = [
 export const MAP_ROUTES = [
   { id: "jakarta-singapore", from: "jakarta", to: "singapore", status: "live", bend: 30, pulses: 2 },
   { id: "singapore-kuala-lumpur", from: "singapore", to: "kuala-lumpur", status: "live", bend: -8, pulses: 1 },
-  { id: "kuala-lumpur-bangkok", from: "kuala-lumpur", to: "bangkok", status: "planned", bend: 16 },
+  { id: "kuala-lumpur-bangkok", from: "kuala-lumpur", to: "bangkok", status: "live", bend: 16 },
   { id: "java-corridor", from: "jakarta", to: { x: 446, y: 642 }, status: "planned", bend: -10, terminal: true },
 ];

@@ -13,7 +13,7 @@ export default function CountryRouteMap({ countryId, width = 640, height = 480, 
     34
   );
 
-  const routes = NETWORK_ROUTES.filter((r) => r.countries.includes(countryId));
+  const routes = NETWORK_ROUTES.filter((r) => r.diagram === countryId);
   const usedLocations = Object.entries(NETWORK_LOCATIONS).filter(
     ([id, l]) => l.label && (l.country === countryId || routes.some((r) => r.points.includes(id)))
   );
