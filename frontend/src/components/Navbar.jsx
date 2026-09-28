@@ -218,9 +218,6 @@ export default function Navbar() {
           <Link to="/#solutions" data-testid="navbar-mobile-link-solutions" className="block border-b border-brand-mist3 py-4 font-display text-lg font-semibold text-brand-ink">
             Solutions
           </Link>
-          <Link to="/#industries" data-testid="navbar-mobile-link-industries" className="block border-b border-brand-mist3 py-4 font-display text-lg font-semibold text-brand-ink">
-            Industries
-          </Link>
           <Link to="/#about" data-testid="navbar-mobile-link-about" className="block border-b border-brand-mist3 py-4 font-display text-lg font-semibold text-brand-ink">
             About
           </Link>

@@ -89,6 +89,10 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - New photo /images/network/fiber-hero.jpg — blue LC fiber optic patch cables on panel (Pexels, free license, 2400x1600), chosen for brand-blue palette + "deep fiber photographic realism"; rejected candidates: control-room.jpg (actually a concert control room, pink/wrong theme), infrastructure-band.jpg (orange broadcast rack + already used on 2 pages), jakarta-night.jpg (warm amber tones), unsplash candidates (404 / premium-locked), abstract network mesh (cyberpunk-neon, forbidden by design guidelines).
 - Verified: desktop 1440 + mobile 390 screenshots (hero renders with image, text legible, breadcrumb present, footprint map + tabs below intact, no horizontal overflow); first mobile capture clipping was a mid-Lenis-scroll artifact, recheck at scrollY=0 clean.
 
+## Implemented (2026-09-28) — Remove Industries menu item (v9)
+- "Industries" removed from desktop nav (NAV_LINKS in company.js) and from the hardcoded mobile menu (Navbar.jsx). Homepage Industries SECTION itself kept per request scope (menu only); id="industries" anchor retained, no nav entry links to it anymore.
+- Verified: desktop navbar + opened mobile menu screenshots — menu now Home / Network / Services / Solutions / About; mobile testid list confirms industries link gone.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.

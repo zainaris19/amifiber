@@ -13,7 +13,6 @@ export const NAV_LINKS = [
   { label: "Network", to: "/network" },
   { label: "Services", to: "/services" }, // rendered as dropdown trigger on desktop
   { label: "Solutions", to: "/#solutions" },
-  { label: "Industries", to: "/#industries" },
   { label: "About", to: "/#about" },
 ];
 
