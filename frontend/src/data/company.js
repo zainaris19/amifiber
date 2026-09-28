@@ -48,8 +48,6 @@ export const FOOTER_COLUMNS = [
     title: "Services",
     links: [
       { label: "Dark Fiber", to: "/services/dark-fiber" },
-      { label: "Data Center Interconnection", to: "/#services" },
-      { label: "International Connectivity", to: "/#solutions" },
       { label: "Custom Infrastructure", to: "/services/custom-network-infrastructure" },
     ],
   },

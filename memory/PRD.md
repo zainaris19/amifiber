@@ -93,6 +93,10 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - "Industries" removed from desktop nav (NAV_LINKS in company.js) and from the hardcoded mobile menu (Navbar.jsx). Homepage Industries SECTION itself kept per request scope (menu only); id="industries" anchor retained, no nav entry links to it anymore.
 - Verified: desktop navbar + opened mobile menu screenshots — menu now Home / Network / Services / Solutions / About; mobile testid list confirms industries link gone.
 
+## Implemented (2026-09-28) — Footer services links cleanup (v10)
+- Removed "Data Center Interconnection" and "International Connectivity" from the footer SERVICES column (FOOTER_COLUMNS in company.js) — column now lists only the two real service pages: Dark Fiber + Custom Infrastructure.
+- Verified via footer screenshot: both links gone, all other columns (Network / Company / Connect) intact.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
