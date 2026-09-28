@@ -70,6 +70,8 @@ export default function HeroVideo() {
         )}
       </motion.div>
 
+      <div className="absolute inset-0 bg-gradient-to-r from-[#002B55]/55 via-[#002B55]/30 to-[#002B55]/10" aria-hidden="true" />
+
       <motion.div
         style={{
           textShadow: "0 1px 3px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.45)",

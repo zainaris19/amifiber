@@ -76,7 +76,7 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Removed BOTH full-bleed blue gradient overlays (L→R 85% and T→B 60–75%) from the hero — video/poster now shows neutrally, no more heavy blue cast.
 - Headline "Providing the Backbone of Digital Connectivity." reduced ~15%: clamp(2.625rem,7vw,5rem) → clamp(2.5rem,6vw,4.25rem) (max 80px → 68px).
 - Text readability kept WITHOUT overlays via inherited neutral text-shadow (0 1px 3px rgba(0,0,0,.5) + 0 10px 30px rgba(0,0,0,.45)) on the content block; eyebrow brightened #9CC9EC→#B4D7F1, paragraph white/80→white/90, bottom tagline white/60→white/75.
-- Verified via desktop 1440 + mobile 390 screenshots: no blue cast, headline clearly readable, all hero copy legible, no horizontal overflow, no console errors.
+- Hero readability final state (after user feedback "too bright"): ONE subtle left-weighted overlay bg-gradient-to-r from-[#002B55]/55 via-[#002B55]/30 to-[#002B55]/10 (vs original 85%+60% double overlay) — video stays visible, text fully legible on desktop 1440 + mobile 390; mobile eyebrow clipping in first capture was a screenshot artifact, recheck capture clean.
 
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
