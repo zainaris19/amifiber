@@ -162,12 +162,7 @@ async def send_email(*, to: str, subject: str, html: str, reply_to: Optional[str
 # ---------------------------------------------------------------------------
 ALLOWED_SERVICES = {
     "Dark Fiber",
-    "Data Center Interconnection",
-    "International Connectivity",
-    "Layer 1 / DWDM",
-    "Layer 2 Ethernet",
     "Custom Infrastructure",
-    "Other",
 }
 
 

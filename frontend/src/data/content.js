@@ -158,10 +158,5 @@ export const PRINCIPLES = [
 
 export const SERVICE_OPTIONS = [
   "Dark Fiber",
-  "Data Center Interconnection",
-  "International Connectivity",
-  "Layer 1 / DWDM",
-  "Layer 2 Ethernet",
   "Custom Infrastructure",
-  "Other",
 ];

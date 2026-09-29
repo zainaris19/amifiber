@@ -114,6 +114,11 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Created /app/DEPLOYMENT-VPS.md: Indonesian step-by-step VPS guide (mongod + uvicorn systemd + CRA build with own REACT_APP_BACKEND_URL + nginx SPA/API config + .env checklist + mongodump/mongorestore data migration note).
 - Remaining non-Emergent externals (fine for private hosting): Google Fonts, MapLibre demotiles (public free services).
 
+## Implemented (2026-09-29) — Service dropdown trimmed (v13)
+- Contact form "Service Required *" dropdown reduced to Dark Fiber + Custom Infrastructure: SERVICE_OPTIONS (frontend/src/data/content.js) and backend ALLOWED_SERVICES validation kept in sync.
+- Verified: dropdown options via live select interaction (placeholder + 2 options), old options ("Layer 1 / DWDM") rejected by API with 422 invalid-service, form layout intact.
+- Note: homepage marquee/services sections still mention other offerings — untouched intentionally (user asked dropdown only).
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
