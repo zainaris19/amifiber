@@ -119,6 +119,11 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Verified: dropdown options via live select interaction (placeholder + 2 options), old options ("Layer 1 / DWDM") rejected by API with 422 invalid-service, form layout intact.
 - Note: homepage marquee/services sections still mention other offerings — untouched intentionally (user asked dropdown only).
 
+## Implemented (2026-09-29) — Documentary photo strip uses customer's images (v14)
+- All 4 photos on /network (EEC Corridor Thailand, North–South Corridor Malaysia, Data Center Interconnection Singapore, Sunda Strait Crossing Indonesia) replaced with the customer-provided composite: extracted via column/row density segmentation from the shared webp (clean crops ~460x372, no white edges/caption bleed).
+- Overwritten files: network/thailand-corridor.jpg, network/malaysia-longhaul.jpg, service-dci.jpg (also used by homepage DCI card + DarkFiber page card — new server-room photo fits), network/indonesia-coastline.jpg.
+- Verified: all 4 imgs naturalWidth>0 on /network, strip renders identical to the customer's mockup.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
