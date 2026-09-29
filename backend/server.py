@@ -2,16 +2,20 @@ import os
 import re
 import time
 import uuid
+import asyncio
+import smtplib
 import ipaddress
 import logging
 from html import escape
 from html.parser import HTMLParser
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.utils import formataddr
 from pathlib import Path
 from urllib.parse import urlparse
 from datetime import datetime, timezone
 from typing import Optional
 
-import httpx
 from dotenv import load_dotenv
 from fastapi import FastAPI, APIRouter, Request, HTTPException
 from pydantic import BaseModel, EmailStr, Field, field_validator
@@ -27,11 +31,14 @@ client = AsyncIOMotorClient(MONGO_URL)
 db = client[DB_NAME]
 
 # ---------------------------------------------------------------------------
-# Managed email integration (Emergent). Sender display name is this app's own
-# brand; the destination inbox is configured server-side via CONTACT_EMAIL.
+# Email (self-hosted friendly): sends via plain SMTP configured in .env.
+# Sender display name is this app's own brand; the destination inbox for
+# inquiry notifications is configured server-side via CONTACT_EMAIL.
 # ---------------------------------------------------------------------------
-EMAIL_BASE_URL = "https://integrations.emergentagent.com"
-EMAIL_KEY = os.environ["EMERGENT_EMAIL_KEY"]
+SMTP_HOST = os.environ["SMTP_HOST"]
+SMTP_PORT = int(os.environ["SMTP_PORT"])
+SMTP_USER = os.environ["SMTP_USER"]
+SMTP_PASS = os.environ["SMTP_PASS"]
 EMAIL_FROM_NAME = os.environ["EMAIL_FROM_NAME"]
 EMAIL_REPLY_TO = os.environ.get("EMAIL_REPLY_TO") or None
 
@@ -118,26 +125,36 @@ def _assert_safe_email(subject: str, html: str) -> None:
                 raise ValueError(f"Anchor text {m.group(1)!r} != real link host {real!r} (G3)")
 
 
-async def send_email(*, to: str, subject: str, html: str, reply_to: Optional[str] = None):
+def _send_email_smtp(*, to: str, subject: str, html: str, reply_to: Optional[str] = None) -> bool:
+    """Blocking SMTP send — always call via send_email() (async wrapper)."""
     _assert_safe_email(subject, html)
-    payload = {"to": [to], "subject": subject, "html": html, "from_name": EMAIL_FROM_NAME}
-    if reply_to or EMAIL_REPLY_TO:
-        payload["contact_email"] = reply_to or EMAIL_REPLY_TO
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = subject
+    msg["From"] = formataddr((EMAIL_FROM_NAME, SMTP_USER))
+    msg["To"] = to
+    effective_reply_to = reply_to or EMAIL_REPLY_TO
+    if effective_reply_to:
+        msg["Reply-To"] = effective_reply_to
+    msg.attach(MIMEText(html, "html", "utf-8"))
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as server:
+        server.starttls()
+        server.login(SMTP_USER, SMTP_PASS)
+        server.sendmail(SMTP_USER, [to], msg.as_string())
+    return True
+
+
+async def send_email(*, to: str, subject: str, html: str, reply_to: Optional[str] = None) -> bool:
+    """Non-blocking wrapper — smtplib is synchronous, keep the event loop free."""
     try:
-        async with httpx.AsyncClient(timeout=30) as http:
-            resp = await http.post(
-                f"{EMAIL_BASE_URL}/api/v1/email/send",
-                headers={"X-Email-Key": EMAIL_KEY},
-                json=payload,
-            )
-        resp.raise_for_status()
-        return resp.json().get("id")
-    except httpx.HTTPStatusError as e:
-        logger.error(f"Email send failed: {e.response.status_code} {e.response.text}")
-        raise HTTPException(status_code=502, detail="Failed to send email")
+        return await asyncio.to_thread(
+            _send_email_smtp, to=to, subject=subject, html=html, reply_to=reply_to
+        )
+    except smtplib.SMTPAuthenticationError:
+        logger.error("SMTP authentication failed — check SMTP_USER/SMTP_PASS in .env")
+        raise HTTPException(status_code=500, detail="Email service misconfigured")
     except Exception as e:
-        logger.error(f"Email send error: {str(e)}")
-        raise HTTPException(status_code=500, detail="Failed to send email")
+        logger.error(f"Email send error: {e}")
+        raise HTTPException(status_code=502, detail="Failed to send email")
 
 
 # ---------------------------------------------------------------------------

@@ -105,6 +105,15 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Playbook self-check passed: EMAIL_FROM_NAME in .env+code, from_name on every payload, _assert_safe_email gate on the single send path, no forms/links/credential asks in templates, recipients from config or the form author.
 - Verified e2e via external preview URL: POST /api/contact → {"email_sent": true, "confirmation_sent": true}; proxy logs show 2x HTTP 202 Accepted; rate-limit 429 still functioning. Could NOT verify inbox receipt inside sales@amifiber.com (no mailbox access) — user should confirm arrival.
 
+## Implemented (2026-09-28) — Full standalone migration for self-hosted VPS (v12)
+- AUDIT RESULT: all Emergent connections removed; site is 100% self-hostable.
+- index.html: removed platform script emergent-main.js, PostHog analytics (ap.emergent.sh) and its DataCloneError workaround; page structure restored cleanly (transient breakage during edit fixed deterministically; div#root verified back). One stray artifact remains in served HTML only via dev-server overlay injection — NOT in source, NOT in production build (verified by craco build: bundle contains only the inlined REACT_APP_BACKEND_URL preview string, replaced by own domain when rebuilt).
+- Email transport swapped from Emergent integration proxy to pure Gmail SMTP (smtplib stdlib, asyncio.to_thread non-blocking wrapper): From "AMIFIBER <noreplayamifiber@gmail.com>", STARTTLS port 587, credentials in backend/.env only (SMTP_HOST/SMTP_PORT/SMTP_USER/SMTP_PASS); EMERGENT_EMAIL_KEY + httpx usage removed; _assert_safe_email hygiene gate kept; same error contract (HTTPException) for the form UI.
+- Verified e2e: POST /api/contact → {"email_sent": true, "confirmation_sent": true} via Gmail SMTP (notification → sales@amifiber.com; visitor confirmation → test inbox). Zero "Email send error"/SMTP auth errors in logs (2x transient KeyError during hot-reload-before-env window only, cleared by supervisor restart).
+- Removed unused template leftovers constants/testIds/ (home.js emergentLink constant had zero imports); deleted stale local build/ output.
+- Created /app/DEPLOYMENT-VPS.md: Indonesian step-by-step VPS guide (mongod + uvicorn systemd + CRA build with own REACT_APP_BACKEND_URL + nginx SPA/API config + .env checklist + mongodump/mongorestore data migration note).
+- Remaining non-Emergent externals (fine for private hosting): Google Fonts, MapLibre demotiles (public free services).
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
