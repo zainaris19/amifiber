@@ -124,6 +124,12 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Overwritten files: network/thailand-corridor.jpg, network/malaysia-longhaul.jpg, service-dci.jpg (also used by homepage DCI card + DarkFiber page card — new server-room photo fits), network/indonesia-coastline.jpg.
 - Verified: all 4 imgs naturalWidth>0 on /network, strip renders identical to the customer's mockup.
 
+## Implemented (2026-09-29) — Favicon .ico from customer's mark (v15)
+- Customer shared the standalone mark (blue 3-leaf fiber symbol, white bg, 1774x887): flattened onto white, cropped to content, padded to square.
+- Generated favicon.ico (multi-size 16/32/48 embedded, PIL ICO) + refreshed favicon.png (48) + apple-touch-icon.png (180) to the same white-tile design — all icons now from THIS asset.
+- index.html: added <link rel="icon" type="image/x-icon" href="favicon.ico"> ahead of the png link (browsers now also answer the default /favicon.ico request with the real logo).
+- Verified: favicon.ico serves 200 through preview (2485 B, valid ICO w/ 3 sizes), favicon.png + apple-touch-icon 200, served HTML carries both icon links, legibility checked at 16/32/48 via preview strip.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
