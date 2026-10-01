@@ -37,7 +37,7 @@ export default function FlowDiagram({ stages, highlightIndex = -1, testPrefix = 
         )}
         <ol className="relative grid grid-cols-5 gap-6">
           {stages.map((s, i) => (
-            <li key={s.title} className="flex flex-col items-center text-center" data-testid={`${testPrefix}-node-${i + 1}`}>
+            <li key={i} className="flex flex-col items-center text-center" data-testid={`${testPrefix}-node-${i + 1}`}>
               {node(i)}
               <span className={`mt-5 block font-display text-xs font-bold uppercase leading-snug tracking-wide ${i === highlightIndex ? "text-brand-blue" : "text-brand-ink"}`}>
                 {s.title}
@@ -62,7 +62,7 @@ export default function FlowDiagram({ stages, highlightIndex = -1, testPrefix = 
         )}
         <ol className="relative flex flex-col gap-9">
           {stages.map((s, i) => (
-            <li key={s.title} className="flex items-start gap-5" data-testid={`${testPrefix}-node-${i + 1}`}>
+            <li key={i} className="flex items-start gap-5" data-testid={`${testPrefix}-node-${i + 1}`}>
               {node(i)}
               <div>
                 <span className={`block font-display text-sm font-bold uppercase leading-snug tracking-wide ${i === highlightIndex ? "text-brand-blue" : "text-brand-ink"}`}>

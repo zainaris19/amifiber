@@ -130,6 +130,12 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - index.html: added <link rel="icon" type="image/x-icon" href="favicon.ico"> ahead of the png link (browsers now also answer the default /favicon.ico request with the real logo).
 - Verified: favicon.ico serves 200 through preview (2485 B, valid ICO w/ 3 sizes), favicon.png + apple-touch-icon 200, served HTML carries both icon links, legibility checked at 16/32/48 via preview strip.
 
+## Implemented (2026-10-01) — Mobile/desktop Network menu consistency fix (v16)
+- BUG: mobile menu "Network" was hardcoded to "/#network" (homepage anchor scroll to the OUR NETWORK preview) while desktop NAV_LINKS routes to "/network" — inconsistent navigation between viewports.
+- FIX: Navbar.jsx mobile link → "/network" (single behavior on both viewports). Desktop/mobile Solutions & About intentionally remain homepage anchors (consistent with desktop).
+- Verified by testing agent (8/8 passed, /app/test_reports/iteration_1.json): mobile Network → /network (URL + H1 + footprint tabs), desktop Network regression OK, mobile Home/Solutions/About anchors OK, mobile Services accordion + desktop Services dropdown → /services/dark-fiber OK, footer Network Coverage → /network OK.
+- Also fixed React duplicate-key warning in FlowDiagram.jsx (stages rendered with key=title; "Customer Transmission Equipment" legitimately appears twice in the flow) — now key=index (static list, safe). Framer-motion static-position console warning left as-is (advisory only, touching scroll containers risks layout regressions). Testing agent's suggestion to drive the mobile menu from NAV_LINKS noted as future refactor, not applied (menu verified working; refactor risk without user request).
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.

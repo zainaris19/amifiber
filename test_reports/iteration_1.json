@@ -1,0 +1,26 @@
+{
+  "summary": "Verified bug fix: mobile navbar 'Network' link now navigates to /network page (same as desktop) instead of scrolling to homepage #network anchor. Ran 8 Playwright flows covering the fix + all specified regressions on both viewports (390x844 mobile, 1440x900 desktop). All 8 passed.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Console (any page with Services submenu / dark-fiber page)", "issues": ["React warning: 'Encountered two children with the same key: Customer Transmission Equipment' — duplicate key in a list render. Non-blocking but should be deduplicated.", "Framer-motion warning: 'Please ensure that the container has a non-static position (relative/fixed/absolute) to ensure scroll offset is calculated correctly' — minor, suggests adding position:relative on the scroll container used by useScroll/useInView."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "(Optional, not related to this bug) Fix duplicate React key warning for 'Customer Transmission Equipment' in Services/Dark Fiber data list.",
+    "(Optional) Add position:relative on the Framer Motion scroll container to silence warning."
+  ],
+  "critical_code_review_comments": [
+    "Mobile menu markup is hardcoded in Navbar.jsx (lines ~170-235) and duplicates NAV_LINKS from /app/frontend/src/data/company.js. This duplication is exactly what caused the original bug (desktop used NAV_LINKS with '/network', mobile had hardcoded '/#network'). Recommend driving the mobile menu off NAV_LINKS as single source of truth to prevent recurrence."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100% (8/8)"},
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Fix verified end-to-end on preview URL. Mobile 'Network' lands on /network with H1 'Infrastructure connecting Southeast Asia.' and breadcrumb Home / Network. Desktop Network, Services dropdown->Dark Fiber, footer Network Coverage, and intentional anchor behavior for mobile Home/Solutions/About all still work. No backend testing done (frontend-only request).",
+  "rca of the issue": "Root cause: Navbar.jsx hardcoded the mobile 'Network' link as to='/#network' (a homepage hash anchor), while the desktop navbar derived links from NAV_LINKS in data/company.js where Network -> '/network'. ScrollManager interpreted '/#network' as scroll-to-anchor on homepage, so mobile users were scrolled to the 'OUR NETWORK' preview section on '/' instead of being routed to the dedicated /network page. Fix: changed mobile link to to='/network' (Navbar.jsx line ~174). Verified: URL path becomes /network, dedicated page H1 'Infrastructure connecting Southeast Asia.' and 'NETWORK FOOTPRINT' country tabs render. Mitigation to prevent future drift: drive mobile menu from the same NAV_LINKS source used by desktop."
+}
