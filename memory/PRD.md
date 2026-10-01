@@ -136,6 +136,11 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Verified by testing agent (8/8 passed, /app/test_reports/iteration_1.json): mobile Network → /network (URL + H1 + footprint tabs), desktop Network regression OK, mobile Home/Solutions/About anchors OK, mobile Services accordion + desktop Services dropdown → /services/dark-fiber OK, footer Network Coverage → /network OK.
 - Also fixed React duplicate-key warning in FlowDiagram.jsx (stages rendered with key=title; "Customer Transmission Equipment" legitimately appears twice in the flow) — now key=index (static list, safe). Framer-motion static-position console warning left as-is (advisory only, touching scroll containers risks layout regressions). Testing agent's suggestion to drive the mobile menu from NAV_LINKS noted as future refactor, not applied (menu verified working; refactor risk without user request).
 
+## Implemented (2026-10-01) — Hero video replaced with customer's latest (v17)
+- New video (quality_restoration MP4, 41.2 MB source, 1280x720 24fps 37.3s, H.264+AAC) re-encoded WITHOUT generational quality loss and installed under the SAME filenames (zero HeroVideo.jsx changes): desktop amifiber-hero.mp4 CRF 18 preset slow H.264 High (13.9 MB), mobile CRF 26 (5.7 MB — lighter for cellular), VP9 webm fallback CRF 33 (6.7 MB), poster frame at 2s (data center corridor, 1600w, 125 KB). Audio stripped (hero is muted); -movflags +faststart on both MP4s so playback starts while still downloading (smooth open).
+- Note: source is 720p — encoded at native res with max-fidelity settings so no ADDED blur; for sharper desktop fill a 1080p+ source would help (told user).
+- Verified: all 4 assets serve 200 via preview URL; hero video PLAYS in-browser (currentTime advancing 0→4.7s during load, no stall); desktop + mobile screenshots show new content (aerial coastal highway w/ light streak; technician scene) with text readable; no overflow.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
