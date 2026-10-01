@@ -83,13 +83,13 @@ export default function HeroVideo() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#B4D7F1] sm:text-xs"
+          className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#B4D7F1] sm:text-[11px]"
         >
-          <span className="h-px w-10 bg-brand-sky" aria-hidden="true" />
+          <span className="h-px w-8 bg-brand-sky" aria-hidden="true" />
           Fiber Infrastructure • Southeast Asia
         </motion.p>
 
-        <h1 className="mt-6 font-display text-[clamp(2.5rem,6vw,4.25rem)] font-extrabold leading-[1.05] tracking-tight text-white">
+        <h1 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold leading-[1.08] tracking-tight text-white">
           {LINES.map((line, i) => (
             <span key={i} className="block overflow-hidden pb-1">
               <motion.span
@@ -108,7 +108,7 @@ export default function HeroVideo() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-7 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg"
+          className="mt-6 max-w-lg text-sm leading-relaxed text-white/90 sm:text-base"
         >
           High-capacity fiber infrastructure connecting data centers, carriers, cloud platforms, ISPs, and enterprises
           across Southeast Asia.
@@ -118,19 +118,19 @@ export default function HeroVideo() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-10 flex flex-col gap-4 sm:flex-row"
+          className="mt-9 flex flex-col gap-3 sm:flex-row"
         >
           <a
             href="#network"
             data-testid="hero-explore-network-button"
-            className="inline-flex h-12 items-center justify-center bg-brand-blue px-8 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-brand-net"
+            className="inline-flex h-11 items-center justify-center bg-brand-blue px-7 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-brand-net"
           >
             Explore Our Network
           </a>
           <a
             href="#contact"
             data-testid="hero-contact-button"
-            className="inline-flex h-12 items-center justify-center border border-white/50 px-8 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/10"
+            className="inline-flex h-11 items-center justify-center border border-white/50 px-7 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/10"
           >
             Talk to Our Team
           </a>
@@ -140,9 +140,9 @@ export default function HeroVideo() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-          className="mt-12 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.22em] text-white/75 sm:text-xs"
+          className="mt-10 flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.22em] text-white/75 sm:text-[11px]"
         >
-          <span className="h-px w-6 bg-white/40" aria-hidden="true" />
+          <span className="h-px w-5 bg-white/40" aria-hidden="true" />
           Built for mission-critical digital infrastructure.
         </motion.p>
       </motion.div>

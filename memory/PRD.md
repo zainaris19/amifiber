@@ -141,6 +141,10 @@ Blue+white Swiss-corporate system (#0057B8/#0088E8/#38BDF8/#003B73/#002B55 on wh
 - Note: source is 720p — encoded at native res with max-fidelity settings so no ADDED blur; for sharper desktop fill a 1080p+ source would help (told user).
 - Verified: all 4 assets serve 200 via preview URL; hero video PLAYS in-browser (currentTime advancing 0→4.7s during load, no stall); desktop + mobile screenshots show new content (aerial coastal highway w/ light streak; technician scene) with text readable; no overflow.
 
+## Implemented (2026-10-01) — Hero typography scaled down (v18)
+- With the new video as the visual lead, whole hero hierarchy reduced proportionally: eyebrow 11/12px → 10/11px (line w-10→w-8), H1 clamp(2.5rem,6vw,4.25rem) → clamp(2rem,4.5vw,3.25rem) max 52px (was 80px originally), paragraph base/lg → sm/base with max-w-xl→max-w-lg, buttons h-12/px-8 → h-11/px-7, bottom tagline 11/12px → 10/11px; vertical rhythm tightened mt-6/7/10/12 → mt-5/6/9/10 so the smaller block stays vertically centered and balanced.
+- Verified via desktop 1440 + mobile 390 screenshots: composition "pas" — video prominent, text crisp with shadow, eyebrow wraps correctly on mobile (no clip), no horizontal overflow.
+
 ## Backlog / P0-P2
 - P0: Set CONTACT_EMAIL in backend/.env to the real company inbox (enables email delivery).
 - P1: Replace placeholder LinkedIn URL + public email in src/data/company.js.
