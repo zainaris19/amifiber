@@ -171,7 +171,7 @@ export default function Navbar() {
           <Link to="/" data-testid="navbar-mobile-link-home" className="block border-b border-brand-mist3 py-4 font-display text-lg font-semibold text-brand-ink">
             Home
           </Link>
-          <Link to="/#network" data-testid="navbar-mobile-link-network" className="block border-b border-brand-mist3 py-4 font-display text-lg font-semibold text-brand-ink">
+          <Link to="/network" data-testid="navbar-mobile-link-network" className="block border-b border-brand-mist3 py-4 font-display text-lg font-semibold text-brand-ink">
             Network
           </Link>
 
